@@ -1,7 +1,7 @@
 // Write your "projects" router here!
 const express = require("express");
 const projDb = require("./projects-model");
-const { checkProjId, checkProjD, checkActD } = require("../middleware/index");
+const { checkProjId, checkProjD } = require("../middleware/index");
 
 const projRouter = express.Router;
 
@@ -38,7 +38,7 @@ projRouter.post("/api/projects", checkProjD(), (req, res, next) => {
 
 });
 
-projRouter.put("/api/projects/:id", checkProjId(), checkActD(), (req, res, next) => {
+projRouter.put("/api/projects/:id", checkProjId(), checkProjD(), (req, res, next) => {
 
     projDb.update(req.params.id, req.body)
         .then((project) => {

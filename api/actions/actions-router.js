@@ -3,7 +3,7 @@ const express = require("express");
 const { checkActD, checkActId } = require("../middleware");
 const actDb = require("./actions-model");
 
-const actRouter = express.Router();
+const actRouter = express.Router;
 
 actRouter.get("api/actions", (req, res, next) => {
 
