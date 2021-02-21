@@ -12,11 +12,15 @@ I need this code, but don't know where, perhaps should make some middleware, don
 
 Go code!
 */
+const express = require("express");
+const helmet = require("helmet");
+const cors = require("cors");
 
 const server = require("./api/server");
+const port = process.env.PORT || 8080;
 
-server.listen(8080, () => {
+server.listen(PORT, () => {
 
-    console.log("Application is running at http://localhost:8080")
+    console.log(`Application is running at http://localhost:${PORT}`)
     
 });
